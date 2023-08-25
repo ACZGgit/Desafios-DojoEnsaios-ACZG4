@@ -1,0 +1,49 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Itellij Idea Workspace
+.idea
+*.iws
+*.iml
+*.ids
+*.ipr
+production
+
+# Gradle
+.gradle
+build
+classes
+native
+
+# Gradle Wrapper
+gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# Extras
+out
+target
+*.log
+.kill-run-app
+.slcache
+pid
+.project
+.settings
+.classpath
+
+# IDE support files
+.launch
+*.launch
+*.tmproj
+ivy*
+eclipse
+
+# System Files
+.DS_Store
+Thumbs.db
