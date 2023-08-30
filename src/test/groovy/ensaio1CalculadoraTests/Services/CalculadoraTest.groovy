@@ -40,7 +40,8 @@ class CalculadoraTest {
     }
 
     @Test
-    void subtracaoDeDoisValores(){//Given
+    void subtracaoDeDoisValores(){
+        //Given
         int value1 = 2
         int value2 = 3
         int expectResult = -1
