@@ -93,4 +93,13 @@ class CalculadoraCientificaService implements ICalculadora{
         return Math.pow(num, 1 / term)
     }
 
+    double fatorial(double num){
+        Double resultFatorial = 1;
+        for (int i = num; i == 1; i--) {
+            resultFatorial = resultFatorial * i
+        }
+
+        return resultFatorial
+    }
+
 }

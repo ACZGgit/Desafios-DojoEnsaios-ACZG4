@@ -241,4 +241,17 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testeFatorial() {
+        // Given
+        double num = 5
+        double expectResult = 120
+
+        // When
+        double resultObtained = calculadoraCientificaService.fatorial(num)
+
+        // Then
+        assertEquals(expectResult, resultObtained)
+    }
+
 }
