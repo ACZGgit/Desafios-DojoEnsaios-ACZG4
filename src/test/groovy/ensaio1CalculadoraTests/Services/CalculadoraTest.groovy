@@ -147,4 +147,17 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void testaCosseno(){
+        //Given
+        int value1 = 60
+        double expectResult = 0.5
+
+        //When
+        double resultObtained = calculadoraCientificaService.cosseno(value1).round(1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }

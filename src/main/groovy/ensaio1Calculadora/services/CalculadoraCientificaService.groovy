@@ -33,7 +33,7 @@ class CalculadoraCientificaService implements ICalculadora{
 
     @Override
     double mult(double x, double y){
-        x * y
+        return x * y
     }
 
     double raizQuadrada(double x){
@@ -55,5 +55,10 @@ class CalculadoraCientificaService implements ICalculadora{
     double seno(double x) {
         def angleInRadians = Math.toRadians(x)
         return Math.sin(angleInRadians)
+    }
+
+    double cosseno(double x) {
+        def angleInRadians = Math.toRadians(x)
+        return Math.cos(angleInRadians)
     }
 }
