@@ -69,8 +69,8 @@ class CalculadoraCientificaService implements ICalculadora{
 
     double secante(double x) {
         double angleInRadians = Math.toRadians(x)
-        double angleInRadians = 1 / Math.cos(x)
+        double secante = 1 / Math.cos(angleInRadians)
 
-        return  cosseno(secante)
+        return secante
     }
 }

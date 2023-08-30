@@ -177,8 +177,8 @@ class CalculadoraTest {
     @Test
     void testSecante(){
         //Given
-        int value1 = 30
-        double expectResult = 6.5
+        int value1 = 60
+        double expectResult = 2
 
         //When
         double resultObtained = calculadoraCientificaService.secante(value1).round(1)
