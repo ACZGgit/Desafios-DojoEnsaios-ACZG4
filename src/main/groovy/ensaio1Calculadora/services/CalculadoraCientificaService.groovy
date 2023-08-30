@@ -47,4 +47,8 @@ class CalculadoraCientificaService implements ICalculadora{
     static double porcentagem(double x, double y){
         return x * (y / 100)
     }
+
+    static double log(double x, double y) {
+        return Math.log(y) / Math.log(x)
+    }
 }

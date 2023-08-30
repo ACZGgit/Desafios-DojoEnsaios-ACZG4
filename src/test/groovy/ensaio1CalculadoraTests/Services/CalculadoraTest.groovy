@@ -120,4 +120,18 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void log(){
+        //Given
+        int value1 = 2
+        int value2 = 4
+        int expectResult = 2
+
+        //When
+        double resultObtained = calculadoraCientificaService.log(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
