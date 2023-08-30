@@ -186,4 +186,33 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void testCosecante(){
+        //Given
+        int value1 = 30
+        double expectResult = 2
+
+        //When
+        double resultObtained = calculadoraCientificaService.cosecante(value1).round(1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
+
+
+    @Test
+    void testCotangente(){
+        //Given
+        int value1 = 45
+        double expectResult = 1
+
+        //When
+        double resultObtained = calculadoraCientificaService.cotangente(value1).round(1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
+
+
 }

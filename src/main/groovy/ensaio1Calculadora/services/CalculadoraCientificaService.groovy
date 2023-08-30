@@ -53,17 +53,17 @@ class CalculadoraCientificaService implements ICalculadora{
     }
 
     double seno(double x) {
-        def angleInRadians = Math.toRadians(x)
+        double angleInRadians = Math.toRadians(x)
         return Math.sin(angleInRadians)
     }
 
     double cosseno(double x) {
-        def angleInRadians = Math.toRadians(x)
+        double angleInRadians = Math.toRadians(x)
         return Math.cos(angleInRadians)
     }
 
     double tangente(double x) {
-        def angleInRadians = Math.toRadians(x)
+        double angleInRadians = Math.toRadians(x)
         return Math.tan(angleInRadians)
     }
 
@@ -73,4 +73,16 @@ class CalculadoraCientificaService implements ICalculadora{
 
         return secante
     }
+
+    double cosecante(double x) {
+        double angleInRadians = Math.toRadians(x)
+        double cosecante = 1 / Math.sin(angleInRadians)
+
+        return cosecante
+    }
+
+    double cotangente(double x) {
+        return 1 / this.tangente(x)
+    }
+
 }
