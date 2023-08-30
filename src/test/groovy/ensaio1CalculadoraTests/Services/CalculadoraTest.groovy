@@ -221,7 +221,10 @@ class CalculadoraTest {
         double expectResult = 9.5
 
         // When
-        double resultObtained = calculadoraCientificaService.
+        double resultObtained = calculadoraCientificaService.somaDeVariosTermos(numbers)
+
+        // Then
+        assertEquals(expectResult, resultObtained)
     }
 
 

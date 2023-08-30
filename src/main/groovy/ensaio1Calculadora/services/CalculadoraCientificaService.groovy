@@ -85,4 +85,8 @@ class CalculadoraCientificaService implements ICalculadora{
         return 1 / this.tangente(x)
     }
 
+    double somaDeVariosTermos(List<Double> numbers) {
+        return numbers.sum()
+    }
+
 }
