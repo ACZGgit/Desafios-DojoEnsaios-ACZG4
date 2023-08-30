@@ -56,7 +56,7 @@ class CalculadoraTest {
     void divisaDeDoisValores(){
         //Given
         int value1 = 6
-        int value2 = 0
+        int value2 = 2
         int expectResult = 3
 
         //When
@@ -130,6 +130,19 @@ class CalculadoraTest {
 
         //When
         double resultObtained = calculadoraCientificaService.log(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
+
+    @Test
+    void testaSeno(){
+        //Given
+        int value1 = 30
+        double expectResult = 0.5
+
+        //When
+        double resultObtained = calculadoraCientificaService.seno(value1).round(1)
 
         //Then
         assertEquals(expectResult, resultObtained)

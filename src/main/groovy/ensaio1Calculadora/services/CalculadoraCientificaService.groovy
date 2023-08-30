@@ -36,19 +36,24 @@ class CalculadoraCientificaService implements ICalculadora{
         x * y
     }
 
-    static double raizQuadrada(double x){
+    double raizQuadrada(double x){
         return Math.sqrt(x)
     }
 
-    static double pot(double x, double y){
+    double pot(double x, double y){
         return Math.pow(x, y)
     }
 
-    static double porcentagem(double x, double y){
+    double porcentagem(double x, double y){
         return x * (y / 100)
     }
 
-    static double log(double x, double y) {
+    double log(double x, double y) {
         return Math.log(y) / Math.log(x)
+    }
+
+    double seno(double x) {
+        def angleInRadians = Math.toRadians(x)
+        return Math.sin(angleInRadians)
     }
 }
