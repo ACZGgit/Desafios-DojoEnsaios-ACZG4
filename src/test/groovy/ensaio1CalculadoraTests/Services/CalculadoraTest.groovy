@@ -160,4 +160,17 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void testaTangente(){
+        //Given
+        int value1 = 45
+        double expectResult = 1
+
+        //When
+        double resultObtained = calculadoraCientificaService.tangente(value1).round(1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }

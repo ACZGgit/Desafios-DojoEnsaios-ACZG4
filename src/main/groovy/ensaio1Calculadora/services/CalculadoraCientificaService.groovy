@@ -61,4 +61,9 @@ class CalculadoraCientificaService implements ICalculadora{
         def angleInRadians = Math.toRadians(x)
         return Math.cos(angleInRadians)
     }
+
+    double tangente(double x) {
+        def angleInRadians = Math.toRadians(x)
+        return Math.tan(angleInRadians)
+    }
 }
