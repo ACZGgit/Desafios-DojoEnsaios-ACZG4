@@ -43,4 +43,8 @@ class CalculadoraCientificaService implements ICalculadora{
     static double pot(double x, double y){
         return Math.pow(x, y)
     }
+
+    static double porcentagem(double x, double y){
+        return x * (y / 100)
+    }
 }

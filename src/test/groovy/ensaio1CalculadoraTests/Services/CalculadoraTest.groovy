@@ -106,4 +106,18 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void porcentagemValores(){
+        //Given
+        int value1 = 150
+        int value2 = 20
+        int expectResult = 30
+
+        //When
+        double resultObtained = calculadoraCientificaService.porcentagem(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
