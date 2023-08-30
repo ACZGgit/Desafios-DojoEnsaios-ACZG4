@@ -52,5 +52,17 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+    @Test
+    void divisaDeDoisValores(){
+        //Given
+        int value1 = 6
+        int value2 = 0
+        int expectResult = 3
 
+        //When
+        double resultObtained = calculadoraCientificaService.div(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
