@@ -35,4 +35,8 @@ class CalculadoraCientificaService implements ICalculadora{
     double mult(double x, double y){
         x * y
     }
+
+    static double raizQuadrada(double x){
+        return Math.sqrt(x)
+    }
 }

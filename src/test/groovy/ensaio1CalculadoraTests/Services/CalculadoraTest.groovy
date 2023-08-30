@@ -79,4 +79,17 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void raizQuadrada(){
+        //Given
+        int value1 = 25
+        int expectResult = 5
+
+        //When
+        double resultObtained = calculadoraCientificaService.raizQuadrada(value1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
