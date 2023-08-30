@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculadoraTest {
 
-    static CalculadoraCientificaService calculadoraCientificaService;
+    static CalculadoraCientificaService calculadoraCientificaService
 
     @BeforeAll
     static void instanciaDietaService(){
-        calculadoraCientificaService = new CalculadoraCientificaService();
+        calculadoraCientificaService = new CalculadoraCientificaService()
     }
 
     @Test
@@ -26,17 +26,17 @@ class CalculadoraTest {
     }
 
     @Test
-    void sum() {
+    void somaDeDoisValores() {
         //Given:
-        int value1         = 2;
-        int value2         = 2;
-        int expectedResult = 4;
+        int value1         = 2
+        int value2         = 2
+        int expectedResult = 4
 
         //When:
-        double resultObtained = calculadoraCientificaService.sum(2,2);
+        double resultObtained = calculadoraCientificaService.sum(value1, value2)
 
         //Then:
-        assertEquals(expectedResult, resultObtained);
+        assertEquals(expectedResult, resultObtained)
     }
 
 }
