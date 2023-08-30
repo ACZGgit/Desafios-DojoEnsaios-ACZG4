@@ -214,5 +214,15 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testaSomaDeVariosTermos() {
+        // Given
+        List numbers = [2.0, 3.5, 4.0]
+        double expectResult = 9.5
+
+        // When
+        double resultObtained = calculadoraCientificaService.
+    }
+
 
 }
