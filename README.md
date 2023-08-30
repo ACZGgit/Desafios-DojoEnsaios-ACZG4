@@ -30,6 +30,7 @@ compartilhando a tela e codificando e o outro auxiliando verbalmente, os que est
     - Consulta a seres de outro plano existencial ou ajuda de ETs
 - É permitido:
     - Consulta a documentação
+    - Rezar por sua alma
 
 
 
