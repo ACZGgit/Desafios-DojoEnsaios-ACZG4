@@ -39,4 +39,17 @@ class CalculadoraTest {
         assertEquals(expectedResult, resultObtained)
     }
 
+    @Test
+    void subtracaoDeDoisValores(){//Given
+        int value1 = 2
+        int value2 = 3
+        int expectResult = -1
+
+        //When
+        double resultObtained = calculadoraCientificaService.sub(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
+
 }

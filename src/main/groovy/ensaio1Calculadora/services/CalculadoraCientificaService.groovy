@@ -23,7 +23,7 @@ class CalculadoraCientificaService implements ICalculadora{
 
     @Override
     double sub(double x, double y) {
-        return 0
+        return x - y
     }
 
     @Override
