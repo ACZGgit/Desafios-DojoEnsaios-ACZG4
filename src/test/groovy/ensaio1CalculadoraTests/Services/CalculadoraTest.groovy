@@ -173,4 +173,17 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void testSecante(){
+        //Given
+        int value1 = 30
+        double expectResult = 6.5
+
+        //When
+        double resultObtained = calculadoraCientificaService.secante(value1).round(1)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
