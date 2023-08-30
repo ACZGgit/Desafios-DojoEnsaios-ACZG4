@@ -92,4 +92,18 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void potenciaValores(){
+        //Given
+        int value1 = 2
+        int value2 = 4
+        int expectResult = 16
+
+        //When
+        double resultObtained = calculadoraCientificaService.pot(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }

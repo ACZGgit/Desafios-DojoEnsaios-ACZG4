@@ -39,4 +39,8 @@ class CalculadoraCientificaService implements ICalculadora{
     static double raizQuadrada(double x){
         return Math.sqrt(x)
     }
+
+    static double pot(double x, double y){
+        return Math.pow(x, y)
+    }
 }
