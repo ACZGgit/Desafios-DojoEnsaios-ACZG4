@@ -26,7 +26,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void somaDeDoisValores() {
+    void testeSomaDeDoisValores() {
         //Given:
         int value1         = 2
         int value2         = 2
@@ -40,7 +40,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void subtracaoDeDoisValores(){
+    void testeSubtracaoDeDoisValores(){
         //Given
         int value1 = 2
         int value2 = 3
@@ -53,7 +53,7 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
     @Test
-    void divisaDeDoisValores(){
+    void testeDivisaDeDoisValores(){
         //Given
         int value1 = 6
         int value2 = 2
@@ -67,7 +67,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void multiplicaDoisValores(){
+    void testeMultiplicaDoisValores(){
         //Given
         int value1 = 3
         int value2 = 4
@@ -81,7 +81,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void raizQuadrada(){
+    void testeRaizQuadrada(){
         //Given
         int value1 = 25
         int expectResult = 5
@@ -94,7 +94,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void potenciaValores(){
+    void testePotenciaValores(){
         //Given
         int value1 = 2
         int value2 = 4
@@ -108,7 +108,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void porcentagemValores(){
+    void testePorcentagemValores(){
         //Given
         int value1 = 150
         int value2 = 20
@@ -122,7 +122,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void log(){
+    void testeLog(){
         //Given
         int value1 = 2
         int value2 = 4
@@ -136,7 +136,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testaSeno(){
+    void testeSeno(){
         //Given
         int value1 = 30
         double expectResult = 0.5
@@ -149,7 +149,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testaCosseno(){
+    void testeCosseno(){
         //Given
         int value1 = 60
         double expectResult = 0.5
@@ -162,7 +162,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testaTangente(){
+    void testeTangente(){
         //Given
         int value1 = 45
         double expectResult = 1
@@ -175,7 +175,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testSecante(){
+    void testeSecante(){
         //Given
         int value1 = 60
         double expectResult = 2
@@ -188,7 +188,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testCosecante(){
+    void testeCosecante(){
         //Given
         int value1 = 30
         double expectResult = 2
@@ -202,7 +202,7 @@ class CalculadoraTest {
 
 
     @Test
-    void testCotangente(){
+    void testeCotangente(){
         //Given
         int value1 = 45
         double expectResult = 1
@@ -215,7 +215,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void testaSomaDeVariosTermos() {
+    void testeSomaDeVariosTermos() {
         // Given
         List numbers = [2.0, 3.5, 4.0]
         double expectResult = 9.5

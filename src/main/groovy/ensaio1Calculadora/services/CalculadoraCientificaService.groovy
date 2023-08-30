@@ -95,7 +95,7 @@ class CalculadoraCientificaService implements ICalculadora{
 
     double fatorial(double num){
         Double resultFatorial = 1;
-        for (int i = num; i == 1; i--) {
+        for (int i = num; i > 1; i--) {
             resultFatorial = resultFatorial * i
         }
 
