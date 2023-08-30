@@ -33,8 +33,6 @@ class CalculadoraCientificaService implements ICalculadora{
 
     @Override
     double mult(double x, double y){
-        return 0
+        x * y
     }
-
-
 }

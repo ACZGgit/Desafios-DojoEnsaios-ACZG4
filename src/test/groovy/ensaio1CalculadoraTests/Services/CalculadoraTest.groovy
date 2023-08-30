@@ -65,4 +65,18 @@ class CalculadoraTest {
         //Then
         assertEquals(expectResult, resultObtained)
     }
+
+    @Test
+    void multiplicaDoisValores(){
+        //Given
+        int value1 = 3
+        int value2 = 4
+        int expectResult = 12
+
+        //When
+        double resultObtained = calculadoraCientificaService.mult(value1, value2)
+
+        //Then
+        assertEquals(expectResult, resultObtained)
+    }
 }
