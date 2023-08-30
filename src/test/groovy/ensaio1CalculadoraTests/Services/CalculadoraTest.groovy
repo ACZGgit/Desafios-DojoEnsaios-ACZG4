@@ -227,5 +227,18 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testeRaizEnessimaDeX() {
+        // Given
+        double num = 8
+        double term = 3
+        double expectResult = 2
+
+        // When
+        double resultObtained = calculadoraCientificaService.raizEnessimaDeX(num , term)
+
+        // Then
+        assertEquals(expectResult, resultObtained)
+    }
 
 }

@@ -89,4 +89,8 @@ class CalculadoraCientificaService implements ICalculadora{
         return numbers.sum()
     }
 
+    double raizEnessimaDeX(double num, double term){
+        return Math.pow(num, 1 / term)
+    }
+
 }
