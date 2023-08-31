@@ -1,6 +1,6 @@
 Instrução, adicione seu nome com um "OK" na frente e faça um push: (ex. Eduardo - ok)
-1: Júnior Zanoni
-2: Gabriel Landi
-3: Tharik Honda
-4: Higor Azevedo
-5: Igor Moreira
+1:
+2:
+3:
+4:
+5:
