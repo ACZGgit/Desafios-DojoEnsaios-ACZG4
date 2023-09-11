@@ -296,7 +296,7 @@ class CalculadoraTest {
     void testeSimplificarEquacoes(){
 
         // Given
-        String equacao= "x + x"
+        String equacao= "x+x"
         String expectResult = "2x"
         // When
         String resultObtained = calculadoraCientificaService.simplificarEquacao(equacao)

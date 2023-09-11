@@ -117,8 +117,11 @@ class CalculadoraCientificaService implements ICalculadora{
     }
 
     static String simplificarEquacao(String equacao){
-        URL url = new URL("https://newton.now.sh/api/v2/simplify/${equacao}")
-        println(url.openConnection())
-        return ""
+        String equacaoEncode = URLEncoder.encode(equacao, "UTF-8")
+        URL url = new URL("https://newton.now.sh/api/v2/simplify/${equacaoEncode}")
+
+        String conexao = url.openConnection().getInputStream().getText()
+        println(conexao)
+        return conexao
     }
 }
