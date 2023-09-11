@@ -2,6 +2,8 @@ package ensaio1Calculadora.services
 
 import ensaio1Calculadora.interfaces.ICalculadora
 
+import javax.print.DocFlavor
+
 
 class CalculadoraCientificaService implements ICalculadora{
 
@@ -112,5 +114,11 @@ class CalculadoraCientificaService implements ICalculadora{
             sum+=num[i]*pesos[i]
         }
         return sum/pesos.sum()
+    }
+
+    static String simplificarEquacao(String equacao){
+        URL url = new URL("https://newton.now.sh/api/v2/simplify/${equacao}")
+        println(url.openConnection())
+        return ""
     }
 }

@@ -292,4 +292,16 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testeSimplificarEquacoes(){
+
+        // Given
+        String equacao= "x + x"
+        String expectResult = "2x"
+        // When
+        String resultObtained = calculadoraCientificaService.simplificarEquacao(equacao)
+        // Then
+        assertEquals(expectResult, resultObtained)
+    }
+
 }
