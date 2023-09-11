@@ -102,4 +102,8 @@ class CalculadoraCientificaService implements ICalculadora{
         return resultFatorial
     }
 
+    static double mediaSimples(List<Integer> num) {
+        return num.sum() / num.size()
+    }
+
 }

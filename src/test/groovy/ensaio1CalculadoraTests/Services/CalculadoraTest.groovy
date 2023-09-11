@@ -254,4 +254,23 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testeMediaSimples() {
+        // Given
+        ArrayList<Double> num = new ArrayList<>()
+        num.add(1)
+        num.add(3)
+        num.add(4)
+        num.add(5)
+
+        double expectResult = 3.25
+
+        // When
+        double resultObtained = calculadoraCientificaService.mediaSimples(num)
+
+        // Then
+        assertEquals(expectResult, resultObtained)
+    }
+
+
 }
