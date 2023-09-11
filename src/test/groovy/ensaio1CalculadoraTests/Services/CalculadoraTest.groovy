@@ -272,5 +272,24 @@ class CalculadoraTest {
         assertEquals(expectResult, resultObtained)
     }
 
+    @Test
+    void testeMediaPonderada() {
+        // Given
+        ArrayList<Double> num = new ArrayList<>()
+        num.add(2)
+        num.add(2)
+
+        ArrayList<Double> num2=new ArrayList<>()
+        num2.add(1)
+        num2.add(2)
+
+        double expectResult = 2
+
+        // When
+        double resultObtained = calculadoraCientificaService.mediaPonderada(num, num2)
+
+        // Then
+        assertEquals(expectResult, resultObtained)
+    }
 
 }

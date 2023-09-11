@@ -106,4 +106,11 @@ class CalculadoraCientificaService implements ICalculadora{
         return num.sum() / num.size()
     }
 
+    static double mediaPonderada(List<Double> num, List<Double> pesos) {
+        double sum=0;
+        for(int i=0; i<num.size(); i++){
+            sum+=num[i]*pesos[i]
+        }
+        return sum/pesos.sum()
+    }
 }
