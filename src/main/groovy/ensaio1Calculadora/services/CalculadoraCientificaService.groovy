@@ -1,8 +1,10 @@
 package ensaio1Calculadora.services
 
 import ensaio1Calculadora.interfaces.ICalculadora
+import org.jsoup.Jsoup
 
 import javax.print.DocFlavor
+import javax.swing.text.Document
 
 
 class CalculadoraCientificaService implements ICalculadora{
@@ -118,10 +120,10 @@ class CalculadoraCientificaService implements ICalculadora{
 
     static String simplificarEquacao(String equacao){
         String equacaoEncode = URLEncoder.encode(equacao, "UTF-8")
-        URL url = new URL("https://newton.now.sh/api/v2/simplify/${equacaoEncode}")
-
-        String conexao = url.openConnection().getInputStream().getText()
-        println(conexao)
-        return conexao
+        String doc = Jsoup.connect("https://newton.now." +
+                "sh/api/v2/simplify/${equacaoEncode}").ignoreContentType(true).execute().body();
+        ArrayList<String> listStr = doc.split(",")
+        doc = listStr[2]
+        return doc
     }
 }
