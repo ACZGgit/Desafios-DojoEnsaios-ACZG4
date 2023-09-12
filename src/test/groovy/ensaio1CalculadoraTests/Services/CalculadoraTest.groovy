@@ -302,6 +302,23 @@ class CalculadoraTest {
         String resultObtained = calculadoraCientificaService.simplificarEquacao(equacao)
         // Then
         assertEquals(expectResult, resultObtained)
+
+
+    }
+
+    @Test
+    void testeDerivarEquacoes(){
+
+        // Given
+        String equacao= "2x^3"
+        String expectResult = "6 x^2"
+        // When
+        String resultObtained = calculadoraCientificaService
+                .derivarEquacao(equacao)
+        // Then
+        assertEquals(expectResult, resultObtained)
+
+
     }
 
 }

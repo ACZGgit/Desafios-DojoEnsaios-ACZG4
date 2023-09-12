@@ -130,4 +130,17 @@ class CalculadoraCientificaService implements ICalculadora{
 
         return resposta.result
     }
+
+    static String derivarEquacao(String equacao){
+        String equacaoEncode = URLEncoder.encode(equacao, "UTF-8")
+        String json = Jsoup.connect("https://newton.now." +
+                "sh/api/v2/derive/${equacaoEncode}")
+                .ignoreContentType(true)
+                .execute()
+                .body();
+        JsonSlurper jsonSlurper = new JsonSlurper()
+        Map resposta = jsonSlurper.parseText(json)
+
+        return resposta.result
+    }
 }
