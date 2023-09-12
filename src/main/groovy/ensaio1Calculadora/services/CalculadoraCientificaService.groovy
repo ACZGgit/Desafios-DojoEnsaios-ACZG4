@@ -1,6 +1,7 @@
 package ensaio1Calculadora.services
 
 import ensaio1Calculadora.interfaces.ICalculadora
+import groovy.json.JsonSlurper
 import org.jsoup.Jsoup
 
 import javax.print.DocFlavor
@@ -122,8 +123,9 @@ class CalculadoraCientificaService implements ICalculadora{
         String equacaoEncode = URLEncoder.encode(equacao, "UTF-8")
         String doc = Jsoup.connect("https://newton.now." +
                 "sh/api/v2/simplify/${equacaoEncode}").ignoreContentType(true).execute().body();
-        ArrayList<String> listStr = doc.split(",")
-        doc = listStr[2]
-        return doc
+        def jsonSlurper = new JsonSlurper()
+        def object = jsonSlurper.parseText(doc)
+
+        return object.result
     }
 }
