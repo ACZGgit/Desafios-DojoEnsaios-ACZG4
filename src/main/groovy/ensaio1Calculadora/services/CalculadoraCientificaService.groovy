@@ -121,11 +121,13 @@ class CalculadoraCientificaService implements ICalculadora{
 
     static String simplificarEquacao(String equacao){
         String equacaoEncode = URLEncoder.encode(equacao, "UTF-8")
-        String doc = Jsoup.connect("https://newton.now." +
-                "sh/api/v2/simplify/${equacaoEncode}").ignoreContentType(true).execute().body();
-        def jsonSlurper = new JsonSlurper()
-        def object = jsonSlurper.parseText(doc)
+        String json = Jsoup.connect("https://newton.now.sh/api/v2/simplify/${equacaoEncode}")
+                                                                                                .ignoreContentType(true)
+                                                                                                .execute()
+                                                                                                .body();
+        JsonSlurper jsonSlurper = new JsonSlurper()
+        Map resposta = jsonSlurper.parseText(json)
 
-        return object.result
+        return resposta.result
     }
 }
