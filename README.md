@@ -5,8 +5,8 @@
 Os enunciados de ensaios serão divulgados durante os ensaios:
 
 - Ensaio 1: Para acessar o enunciado [clique aqui](https://docs.google.com/document/d/1_G9zLJJjszyBNKQG8kcjqlOkFrcNcvMBNBOuUbMtY4E/edit)
-- Ensaio 2: Para acessar o enunciado [clique aqui](https://docs.google.com/document/d/1Q_M_JGL25Xu93_c4VwQP2BPo1oQApDMSAHkl1iuz1vQ/edit)
-- Ensaio 3: Para acessar o enunciado [clique aqui](https://docs.google.com/document/d/1Bjleo7JUU7UgWdcrqaSyqggH9A2WOJgJMC9QikYK5lk/edit)
+- Ensaio 2: Para acessar o enunciado [clique aqui](https://docs.google.com/document/d/1Bjleo7JUU7UgWdcrqaSyqggH9A2WOJgJMC9QikYK5lk/edit)
+- Ensaio 3: Para acessar o enunciado [clique aqui](https://docs.google.com/document/d/1Q_M_JGL25Xu93_c4VwQP2BPo1oQApDMSAHkl1iuz1vQ/edit)
 
 
 **O Dojo terá início às HH:MM hrs do dia dd/mm/aaaa (N-feira)**

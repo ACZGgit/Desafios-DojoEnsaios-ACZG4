@@ -1,6 +1,6 @@
-package ensaio2.desafio.onetwothree.tests
+package ensaio3.desafio.onetwothree.tests
 
-import ensaio2.desafio.onetwothree.IdentificadorDePalavrasService
+import ensaio3.desafio.onetwothree.IdentificadorDePalavrasService
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
