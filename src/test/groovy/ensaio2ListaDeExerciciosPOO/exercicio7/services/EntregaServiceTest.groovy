@@ -51,7 +51,7 @@ class EntregaServiceTest extends GroovyTestCase {
     @Test
     void calculoDeDistanciaEntregaTest() {
         //given:
-        double distanciaEsperada = 28.28 + 56.56
+        double distanciaEsperada = 28.28 + 56.57
 
         //when:
         List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
@@ -63,20 +63,20 @@ class EntregaServiceTest extends GroovyTestCase {
         assertEquals(distanciaEsperada, distanciaObtida)
     }
 
-//    @Test
-//    void cobrancaPesoExcedenteTest() {
-//        //given:
-//        BigDecimal valorEsperado =
-//
-//        //when:
-//        BigDecimal valorCalculado = entregaService
-//          .calcularValorEntrega(10 as BigDecimal,
-//          entregador, enderecoRestaurante)
-//
-//        //then:
-//        assertEquals(valorEsperado, valorCalculado)
-//
-//    }
+    @Test
+    void cobrancaPesoExcedenteTest() {
+        //given:
+        BigDecimal valorEsperado =
+
+        //when:
+        BigDecimal valorCalculado = entregaService
+          .calcularValorEntrega(10 as BigDecimal,
+          entregador, enderecoRestaurante)
+
+        //then:
+        assertEquals(valorEsperado, valorCalculado)
+
+    }
 
 
 }
