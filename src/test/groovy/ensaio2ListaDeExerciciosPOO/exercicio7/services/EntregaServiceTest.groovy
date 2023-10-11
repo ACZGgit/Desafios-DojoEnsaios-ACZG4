@@ -16,6 +16,7 @@ class EntregaServiceTest extends GroovyTestCase {
 
     static Endereco enderecoRestaurante
     static Endereco posicaoEntregador
+    static Endereco enderecoEntrega
     static Restaurante restaurante
     static Entregador entregador
     static EntregaService entregaService
@@ -25,8 +26,9 @@ class EntregaServiceTest extends GroovyTestCase {
     static void instanciaIdentificadorDePalavrasService() {
         enderecoRestaurante = new Endereco(10, 20)
         posicaoEntregador = new Endereco(30, 40)
+        enderecoEntrega = new Endereco(50, 60)
         restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
-        pedido = new Pedido()
+        pedido = new Pedido([], 100 as BigDecimal, enderecoEntrega)
         entregador = new Entregador("Entregador A",
           new Veiculo("Carro A", 70),
             30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
@@ -49,12 +51,13 @@ class EntregaServiceTest extends GroovyTestCase {
     @Test
     void calculoDeDistanciaEntregaTest() {
         //given:
-        double distanciaEsperada = 28.28
+        double distanciaEsperada = 28.28 + 56.56
 
         //when:
+        List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
         double distanciaObtida = entregaService
-          .calcularDistanciaEntrega(enderecoRestaurante, posicaoEntregador, ).
-          round(2)
+          .calcularDistanciaEntrega(enderecos)
+          .round(2)
 
         //then:
         assertEquals(distanciaEsperada, distanciaObtida)

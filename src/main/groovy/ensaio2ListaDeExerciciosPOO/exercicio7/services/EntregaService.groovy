@@ -13,10 +13,12 @@ class EntregaService {
     return distancia
   }
 
-  double calcularDistanciaEntrega(Endereco enderecoRestaurante,
-                                  Endereco enderecoEntregador,
-                                  Endereco enderecoCliente) {
+  double calcularDistanciaEntrega(List<Endereco> enderecos) {
+    double distanciaEntregadorRestaurante = calcularDistancia(enderecos.get(0), enderecos.get(1))
+    double distanciaRestauranteEntrega = calcularDistancia(enderecos.get(1), enderecos.get(2))
+    double distanciaTotal = distanciaRestauranteEntrega + distanciaEntregadorRestaurante
 
+    return distanciaTotal
   }
 
 //  BigDecimal calcularValorEntrega(BigDecimal precoPedido,

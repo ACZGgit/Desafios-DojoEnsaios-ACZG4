@@ -1,9 +1,9 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 
 public class Pedido {
-  List<Alimento> alimentos;
-  BigDecimal preco;
-  Endereco enderecoEntrega;
+  List<Alimento> alimentos
+  BigDecimal preco
+  Endereco enderecoEntrega
 
   Pedido(List<Alimento> alimentos, BigDecimal preco, Endereco enderecoEntrega) {
     this.alimentos = alimentos
