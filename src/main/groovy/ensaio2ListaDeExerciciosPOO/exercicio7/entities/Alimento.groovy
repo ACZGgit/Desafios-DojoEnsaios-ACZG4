@@ -1,9 +1,9 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 
 public class Alimento {
-  String nome;
-  BigDecimal preco;
-  double peso;
+  String nome
+  BigDecimal preco
+  double peso
 
   String getNome() {
     return nome

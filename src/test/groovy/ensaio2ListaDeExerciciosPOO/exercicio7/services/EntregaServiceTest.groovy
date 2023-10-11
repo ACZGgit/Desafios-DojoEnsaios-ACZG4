@@ -21,6 +21,7 @@ class EntregaServiceTest extends GroovyTestCase {
     static Entregador entregador
     static EntregaService entregaService
     static Pedido pedido
+    static List<Alimento> alimentos
 
     @BeforeAll
     static void instanciaIdentificadorDePalavrasService() {
@@ -28,10 +29,14 @@ class EntregaServiceTest extends GroovyTestCase {
         posicaoEntregador = new Endereco(30, 40)
         enderecoEntrega = new Endereco(50, 60)
         restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
-        pedido = new Pedido([], 100 as BigDecimal, enderecoEntrega)
+        pedido = new Pedido(alimentos, 100 as BigDecimal, enderecoEntrega)
         entregador = new Entregador("Entregador A",
           new Veiculo("Carro A", 70),
             30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
+        alimentos = [new Alimento("Alimento A", 5, 3),
+                     new Alimento("Alimento B", 5, 3),
+                     new Alimento("Alimento C", 5, 6)
+        ]
 
         entregaService = new EntregaService()
     }
@@ -69,9 +74,9 @@ class EntregaServiceTest extends GroovyTestCase {
         BigDecimal valorEsperado =
 
         //when:
+        List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
         BigDecimal valorCalculado = entregaService
-          .calcularValorEntrega(10 as BigDecimal,
-          entregador, enderecoRestaurante)
+          .calcularValorEntrega(pedido, enderecos, entregador)
 
         //then:
         assertEquals(valorEsperado, valorCalculado)

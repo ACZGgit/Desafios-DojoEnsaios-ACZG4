@@ -8,9 +8,11 @@ import static java.lang.Math.sqrt
 
 class EntregaService {
 
+  PedidoService pedidoService = new PedidoService()
+
   double calcularDistancia(Endereco enderecoInicial, Endereco enderecoFinal) {
     double distancia =  sqrt(Math.pow(enderecoFinal.getX() - enderecoInicial.getX(), 2) +
-      Math.pow((enderecoFinal.getY() - enderecoInicial.getY()), 2));
+      Math.pow((enderecoFinal.getY() - enderecoInicial.getY()), 2))
     return distancia
   }
 
@@ -22,16 +24,18 @@ class EntregaService {
     return distanciaTotal
   }
 
-//  BigDecimal calcularValorEntrega(Pedido pedido, List<Endereco> enderecos,
-//                                  Entregador entregador) {
-//
-//   double distanciaEntrega =  this.calcularDistanciaEntrega(enderecos)
-//   double valorTotal = distanciaEntrega * entregador.getPrecoPorKm() +
-//     pedido.getPreco()
-//
-//
-//
-//
-//  }
+  BigDecimal calcularValorEntrega(Pedido pedido, List<Endereco> enderecos,
+                                  Entregador entregador) {
+    double distanciaEntrega = this.calcularDistanciaEntrega(enderecos)
+    double valorTotal = distanciaEntrega * entregador.getPrecoPorKm() + pedido.getPreco()
+
+    if (pedidoService.calcularPeso(pedido) > 10) {
+      double pesoPedido = pedidoService.calcularPeso(pedido)
+      double pesoExcedente = pesoPedido - 10
+      valorTotal += pesoExcedente * entregador.precoPorKg
+    }
+
+    return valorTotal
+  }
 
 }
