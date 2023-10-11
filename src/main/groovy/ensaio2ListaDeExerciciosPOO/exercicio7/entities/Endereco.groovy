@@ -1,27 +1,27 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 
 public class Endereco {
-  int x
-  int y
+  double x
+  double y
 
-  Endereco(int x, int y) {
+  Endereco(double x, double y) {
     this.x = x
     this.y = y
   }
 
-  int getX() {
+  double getX() {
     return x
   }
 
-  void setX(int x) {
+  void setX(double x) {
     this.x = x
   }
 
-  int getY() {
+  double getY() {
     return y
   }
 
-  void setY(int y) {
+  void setY(double y) {
     this.y = y
   }
 }

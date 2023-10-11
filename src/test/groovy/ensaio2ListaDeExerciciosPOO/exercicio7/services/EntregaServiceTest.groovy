@@ -24,7 +24,9 @@ class EntregaServiceTest extends GroovyTestCase {
         Endereco enderecoRestaurante = new Endereco(10, 20)
         Endereco posicaoEntregador = new Endereco(30, 40)
         restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
-        entregador = new Entregador("Entregador A", new Veiculo("Carro A", 70),
+
+        entregador = new Entregador("Entregador A",
+          new Veiculo("Carro A", 70),
             30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
 
     }
@@ -32,15 +34,14 @@ class EntregaServiceTest extends GroovyTestCase {
     @Test
     void calculoDeDistanciaTest() {
         //given:
-
-
+        double distanciaEsperada = 28.284271247462
 
         //when:
-
+        double distanciaObtida = EntregaService
+          .calcularDistancia(enderecoRestaurante, posicaoEntregador)
 
         //then:
-
-
+        assertEquals(distanciaEsperada, distanciaObtida)
     }
 
 
