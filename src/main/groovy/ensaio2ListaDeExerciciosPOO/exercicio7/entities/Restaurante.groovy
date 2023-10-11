@@ -1,11 +1,16 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 
 public class Restaurante {
-	String nome;
-	Endereco endereco;
-	List<Alimento> cardapio;
 
+	String nome
+	Endereco endereco
+	List<Alimento> cardapio
 
+	Restaurante(String nome, Endereco endereco, List<Alimento> cardapio) {
+		this.nome = nome
+		this.endereco = endereco
+		this.cardapio = cardapio
+	}
 
 	String getNome() {
 		return nome

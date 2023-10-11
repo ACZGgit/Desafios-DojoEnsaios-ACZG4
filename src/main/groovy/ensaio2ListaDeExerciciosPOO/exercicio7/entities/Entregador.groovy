@@ -9,6 +9,17 @@ public class Entregador {
   BigDecimal precoPorKm;
   BigDecimal precoPorKg;
 
+  Entregador(String nome, Veiculo veiculo, double pesoMax, List<Pedido> pedidos, Endereco posicaoAtual,
+             BigDecimal precoPorKm, BigDecimal precoPorKg) {
+    this.nome = nome
+    this.veiculo = veiculo
+    this.pesoMax = pesoMax
+    this.pedidos = pedidos
+    this.posicaoAtual = posicaoAtual
+    this.precoPorKm = precoPorKm
+    this.precoPorKg = precoPorKg
+  }
+
   String getNome() {
     return nome
   }

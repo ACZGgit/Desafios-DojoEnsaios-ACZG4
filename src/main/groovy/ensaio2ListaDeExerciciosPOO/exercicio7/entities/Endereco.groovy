@@ -1,8 +1,13 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 
 public class Endereco {
-  int x;
-  int y;
+  int x
+  int y
+
+  Endereco(int x, int y) {
+    this.x = x
+    this.y = y
+  }
 
   int getX() {
     return x

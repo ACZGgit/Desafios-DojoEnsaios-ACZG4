@@ -5,4 +5,9 @@ public class Veiculo {
 	final double velocidadeMax;
 
 	public Veiculo(double velocidadeMax) {this.velocidadeMax = velocidadeMax;}
+
+	Veiculo(String nome, double velocidadeMax) {
+		this.nome = nome
+		this.velocidadeMax = velocidadeMax
+	}
 }
