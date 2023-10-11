@@ -27,7 +27,8 @@ class EntregaService {
   BigDecimal calcularValorEntrega(Pedido pedido, List<Endereco> enderecos,
                                   Entregador entregador) {
     double distanciaEntrega = this.calcularDistanciaEntrega(enderecos)
-    double valorTotal = distanciaEntrega * entregador.getPrecoPorKm() + pedido.getPreco()
+    double valorTotal = distanciaEntrega * entregador.getPrecoPorKm() +
+      pedidoService.calcularValorTotal(pedido)
 
     if (pedidoService.calcularPeso(pedido) > 10) {
       double pesoPedido = pedidoService.calcularPeso(pedido)
@@ -37,5 +38,6 @@ class EntregaService {
 
     return valorTotal
   }
+
 
 }

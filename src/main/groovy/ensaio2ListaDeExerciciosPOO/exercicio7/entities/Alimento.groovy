@@ -5,6 +5,12 @@ public class Alimento {
   BigDecimal preco
   double peso
 
+  Alimento(String nome, BigDecimal preco, double peso) {
+    this.nome = nome
+    this.preco = preco
+    this.peso = peso
+  }
+
   String getNome() {
     return nome
   }

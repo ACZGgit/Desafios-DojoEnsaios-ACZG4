@@ -14,5 +14,10 @@ class PedidoService {
   double calcularValorTotal(Pedido pedido) {
     double valorTotal = 0
 
+    pedido.getAlimentos().each { alimento ->
+      valorTotal += alimento.getPreco()
+    }
+
+    return valorTotal
   }
 }

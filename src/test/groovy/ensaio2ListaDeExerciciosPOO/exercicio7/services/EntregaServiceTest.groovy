@@ -25,20 +25,21 @@ class EntregaServiceTest extends GroovyTestCase {
 
     @BeforeAll
     static void instanciaIdentificadorDePalavrasService() {
-        enderecoRestaurante = new Endereco(10, 20)
-        posicaoEntregador = new Endereco(30, 40)
-        enderecoEntrega = new Endereco(50, 60)
-        restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
-        pedido = new Pedido(alimentos, 100 as BigDecimal, enderecoEntrega)
-        entregador = new Entregador("Entregador A",
-          new Veiculo("Carro A", 70),
-            30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
         alimentos = [new Alimento("Alimento A", 5, 3),
                      new Alimento("Alimento B", 5, 3),
                      new Alimento("Alimento C", 5, 6)
         ]
 
+        enderecoRestaurante = new Endereco(10, 20)
+        posicaoEntregador = new Endereco(30, 40)
+        enderecoEntrega = new Endereco(50, 60)
+        restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
+        pedido = new Pedido(alimentos, 15 as BigDecimal, enderecoEntrega)
+        entregador = new Entregador("Entregador A",
+          new Veiculo("Carro A", 70),
+            30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
         entregaService = new EntregaService()
+
     }
 
     @Test
@@ -71,17 +72,15 @@ class EntregaServiceTest extends GroovyTestCase {
     @Test
     void cobrancaPesoExcedenteTest() {
         //given:
-        BigDecimal valorEsperado =
+        BigDecimal valorEsperado = 883.53
 
         //when:
         List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
         BigDecimal valorCalculado = entregaService
-          .calcularValorEntrega(pedido, enderecos, entregador)
+          .calcularValorEntrega(pedido, enderecos, entregador).round(2)
 
         //then:
         assertEquals(valorEsperado, valorCalculado)
 
     }
-
-
 }
