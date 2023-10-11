@@ -6,11 +6,9 @@ import static java.lang.Math.sqrt
 
 class EntregaService {
 
-  public double calcularDistancia(Endereco endereco, Endereco endereco2) {
-    double distancia =  sqrt(Math.pow(endereco2.getX() - endereco1.getX(),
-      2) +
-      Math.pow((endereco2.getY() - endereco1.getY()), 2));
-
+  double calcularDistancia(Endereco enderecoInicial, Endereco enderecoFinal) {
+    double distancia =  sqrt(Math.pow(enderecoFinal.getX() - enderecoInicial.getX(), 2) +
+      Math.pow((enderecoFinal.getY() - enderecoInicial.getY()), 2));
     return distancia
   }
 }
