@@ -3,7 +3,21 @@ package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 public class Pedido {
   List<Alimento> alimentos;
   BigDecimal preco;
-  double peso;
+  Endereco enderecoEntrega;
+
+  Pedido(List<Alimento> alimentos, BigDecimal preco, Endereco enderecoEntrega) {
+    this.alimentos = alimentos
+    this.preco = preco
+    this.enderecoEntrega = enderecoEntrega
+  }
+
+  Endereco getEnderecoEntrega() {
+    return enderecoEntrega
+  }
+
+  void setEnderecoEntrega(Endereco enderecoEntrega) {
+    this.enderecoEntrega = enderecoEntrega
+  }
 
   List<Alimento> getAlimentos() {
     return alimentos
@@ -21,11 +35,4 @@ public class Pedido {
     this.preco = preco
   }
 
-  double getPeso() {
-    return peso
-  }
-
-  void setPeso(double peso) {
-    this.peso = peso
-  }
 }

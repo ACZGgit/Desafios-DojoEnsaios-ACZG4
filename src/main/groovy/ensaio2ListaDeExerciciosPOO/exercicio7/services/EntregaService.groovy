@@ -1,6 +1,7 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.services
 
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Endereco
+import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Entregador
 
 import static java.lang.Math.sqrt
 
@@ -11,4 +12,21 @@ class EntregaService {
       Math.pow((enderecoFinal.getY() - enderecoInicial.getY()), 2));
     return distancia
   }
+
+  double calcularDistanciaEntrega(Endereco enderecoRestaurante,
+                                  Endereco enderecoEntregador,
+                                  Endereco enderecoCliente) {
+
+  }
+
+//  BigDecimal calcularValorEntrega(BigDecimal precoPedido,
+//                                  Entregador entregador,
+//                                  Endereco enderecoRestaurante) {
+//
+//   double distanciaEntregadorRestaurante =  this
+//     .calcularDistancia(enderecoRestaurante,
+//     entregador.getPosicaoAtual())
+//
+//
+//  }
 }
