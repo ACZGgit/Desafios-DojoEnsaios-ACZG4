@@ -3,16 +3,18 @@ package ensaio2ListaDeExerciciosPOO.exercicio7.entities;
 public class Entregador {
   String nome;
   Veiculo veiculo;
+  double velocidadeDeDeslocamento;
   double pesoMax;
   List<Pedido> pedidos;
   Endereco posicaoAtual;
   BigDecimal precoPorKm;
   BigDecimal precoPorKg;
 
-  Entregador(String nome, Veiculo veiculo, double pesoMax, List<Pedido> pedidos, Endereco posicaoAtual,
+  Entregador(String nome, Veiculo veiculo, double velocidadeDeDeslocamento, double pesoMax, List<Pedido> pedidos, Endereco posicaoAtual,
              BigDecimal precoPorKm, BigDecimal precoPorKg) {
     this.nome = nome
     this.veiculo = veiculo
+    this.velocidadeDeDeslocamento = velocidadeDeDeslocamento
     this.pesoMax = pesoMax
     this.pedidos = pedidos
     this.posicaoAtual = posicaoAtual
@@ -34,6 +36,14 @@ public class Entregador {
 
   void setVeiculo(Veiculo veiculo) {
     this.veiculo = veiculo
+  }
+
+  double getVelocidadeDeDeslocamento() {
+    return velocidadeDeDeslocamento
+  }
+
+  void setVelocidadeDeDeslocamento(double velocidadeDeDeslocamento) {
+    this.velocidadeDeDeslocamento = velocidadeDeDeslocamento
   }
 
   double getPesoMax() {

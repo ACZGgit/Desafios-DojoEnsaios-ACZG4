@@ -36,7 +36,7 @@ class EntregaServiceTest extends GroovyTestCase {
         restaurante = new Restaurante("Restaurante A", enderecoRestaurante, [])
         pedido = new Pedido(alimentos, 15 as BigDecimal, enderecoEntrega)
         entregador = new Entregador("Entregador A",
-          new Veiculo("Carro A", 70),
+          new Veiculo("Carro A", 70), 50,
             30, [], posicaoEntregador, 10 as BigDecimal, 10 as BigDecimal)
         entregaService = new EntregaService()
 
@@ -82,5 +82,18 @@ class EntregaServiceTest extends GroovyTestCase {
         //then:
         assertEquals(valorEsperado, valorCalculado)
 
+    }
+
+    @Test
+    void calculoDeTempoDaEntrega() {
+        //given:
+        double tempoDeEntregaEsperado = 1.697
+
+        //when:
+        List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
+        double tempoDeEntrega = entregaService.calcularTempoEntregaEmHoras(enderecos, entregador).round(3)
+
+        //then:
+        assertEquals(tempoDeEntregaEsperado, tempoDeEntrega)
     }
 }

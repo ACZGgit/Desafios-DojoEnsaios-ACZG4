@@ -4,6 +4,10 @@ import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Endereco
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Entregador
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Pedido
 
+import java.sql.Timestamp
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 import static java.lang.Math.sqrt
 
 class EntregaService {
@@ -37,6 +41,13 @@ class EntregaService {
     }
 
     return valorTotal
+  }
+
+  double calcularTempoEntregaEmHoras(List<Endereco> enderecos, Entregador entregador) {
+    double distanciaTotal = calcularDistanciaEntrega(enderecos)
+    double velocidade = entregador.getVelocidadeDeDeslocamento()
+    double tempo = distanciaTotal / velocidade
+    return tempo
   }
 
 
