@@ -26,6 +26,7 @@ class EntregaServiceTest extends GroovyTestCase {
     static EntregaService entregaService
     static Pedido pedido
     static List<Alimento> alimentos
+    static List<Entregador> entregadores
 
     @BeforeAll
     static void instanciaCenario() {
@@ -54,6 +55,7 @@ class EntregaServiceTest extends GroovyTestCase {
                 new Veiculo("Carro C", 80), 60,
                 35, [], posicaoEntregador3, 11 as BigDecimal, 11 as BigDecimal)
 
+        entregadores = [entregador, entregador2, entregador3]
 
         entregaService = new EntregaService()
 
@@ -87,14 +89,14 @@ class EntregaServiceTest extends GroovyTestCase {
     }
 
     @Test
-    void cobrancaPesoExcedenteTest() {
+    void calculoValorTotalTest() {
         //given:
         BigDecimal valorEsperado = 883.53
 
         //when:
-        List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
+        List<Endereco> enderecos = [ posicaoEntregador3, enderecoRestaurante, enderecoEntrega]
         BigDecimal valorCalculado = entregaService
-          .calcularValorEntrega(pedido, enderecos, entregador).round(2)
+          .calcularValorEntrega(pedido, enderecos, entregador3).round(2)
 
         //then:
         assertEquals(valorEsperado, valorCalculado)
@@ -118,10 +120,15 @@ class EntregaServiceTest extends GroovyTestCase {
     void processarTempoDeEntregaPorEntregadorTest() {
         //Na frente de cada tempo, consta o preço do frete, calculado pelo peso dos pedidos e km rodados na entrega;
         //given:
-        String saidaEsperada = "Entregador: Entregador B, Tempo: 1.331, Preco: " +
-                ""
-        //when:
-        pr
+        String saidaEsperada =
+                'Entregador: Entregador B, Tempo: 1.331, Preco: R$ 837.82\n' +
+                'Entregador: Entregador C, Tempo: 1.355, Preco: R$ 782.24\n' +
+                'Entregador: Entregador A, Tempo: 1.697, Preco: R$ 883.53\n'
 
+        //when:
+        String saidaObtida = entregaService.listarDadosDasEntregas(entregadores, pedido, enderecoEntrega, restaurante)
+
+        //then:
+        assertEquals(saidaEsperada, saidaObtida)
     }
 }

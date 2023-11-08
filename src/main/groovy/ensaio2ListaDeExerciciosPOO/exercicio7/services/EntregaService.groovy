@@ -3,6 +3,7 @@ package ensaio2ListaDeExerciciosPOO.exercicio7.services
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Endereco
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Entregador
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Pedido
+import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Restaurante
 
 import java.sql.Timestamp
 import java.time.LocalDateTime
@@ -50,5 +51,20 @@ class EntregaService {
     return tempo
   }
 
+  String listarDadosDasEntregas(List<Entregador> entregadores, Pedido pedido, Endereco enderecoEntrega,
+                                Restaurante restaurante) {
+    List<String> dadosDasEntregas = []
+
+    entregadores.each {entregador ->
+      List<Endereco> enderecos = [entregador.getPosicaoAtual(), restaurante.getEndereco(), enderecoEntrega]
+      double tempoEntrega = this.calcularTempoEntregaEmHoras(enderecos, entregador)
+      BigDecimal valorEntrega = this.calcularValorEntrega(pedido, enderecos, entregador)
+
+      dadosDasEntregas.add("Entregador: ${entregador.nome}, Tempo: ${tempoEntrega.round(3)}, Preco: R" + '$ ' +
+              "${valorEntrega.round(2)}\n")
+    }
+
+    return dadosDasEntregas
+  }
 
 }
