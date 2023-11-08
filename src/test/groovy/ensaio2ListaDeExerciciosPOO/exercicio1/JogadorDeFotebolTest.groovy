@@ -15,7 +15,7 @@ class JogadorDeFotebolTest extends GroovyTestCase{
         jogadorDeFotebol = new JogadorDeFotebol(
                 "Gesrivaldo Pinto",
                 Posicao.ATACANTE,
-                "1500-02-29",
+                "1500-03-01",
                 "brasileiro",
                 1.60,
                 90
