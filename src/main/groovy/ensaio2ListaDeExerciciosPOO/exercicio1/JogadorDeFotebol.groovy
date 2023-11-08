@@ -1,17 +1,33 @@
 package ensaio2ListaDeExerciciosPOO.exercicio1
 
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class JogadorDeFotebol {
 
     private String nome
+    private Posicao posicao
     private String dataNascimento
     private String nacionalidade
     private Double alturaEmMetros
     private Double pesoEmKg
 
+    JogadorDeFotebol(String nome, Posicao posicao, String dataNascimento, String nacionalidade, Double alturaEmMetros,
+                     Double pesoEmKg) {
+        this.nome = nome
+        this.posicao = posicao
+        this.dataNascimento = dataNascimento
+        this.nacionalidade = nacionalidade
+        this.alturaEmMetros = alturaEmMetros
+        this.pesoEmKg = pesoEmKg
+    }
+
     String getNome() {
         return nome
+    }
+
+    Posicao getPosicao() {
+        return posicao
     }
 
     String getDataNascimento() {
@@ -32,6 +48,10 @@ class JogadorDeFotebol {
 
     void setNome(String nome) {
         this.nome = nome
+    }
+
+    void setPosicao(Posicao posicao) {
+        this.posicao = posicao
     }
 
     void setDataNascimento(String dataNascimento) {
@@ -60,8 +80,11 @@ class JogadorDeFotebol {
                 "Peso: ${this.pesoEmKg}"
     }
 
-    Integer CalculdaIdade() {
+    Integer getIdade() {
+        LocalDate data
+        this.dataNascimento.split("-")
+        LocalDate dataAtual = LocalDate.now()
 
-        Date data = this.dataNascimento
+        return dataAtual.minus(data)
     }
 }
