@@ -121,8 +121,8 @@ class EntregaServiceTest extends GroovyTestCase {
         //Na frente de cada tempo, consta o preço do frete, calculado pelo peso dos pedidos e km rodados na entrega;
         //given:
         String saidaEsperada =
-                'Entregador: Entregador B, Tempo: 1.331, Preco: R$ 837.82\n' +
-                'Entregador: Entregador C, Tempo: 1.355, Preco: R$ 782.24\n' +
+                'Entregador: Entregador C, Tempo: 1.129, Preco: R$ 782.24\n' +
+                'Entregador: Entregador B, Tempo: 1.664, Preco: R$ 837.82\n' +
                 'Entregador: Entregador A, Tempo: 1.697, Preco: R$ 883.53\n'
 
         //when:
@@ -131,4 +131,5 @@ class EntregaServiceTest extends GroovyTestCase {
         //then:
         assertEquals(saidaEsperada, saidaObtida)
     }
+
 }

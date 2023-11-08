@@ -1,5 +1,6 @@
 package ensaio2ListaDeExerciciosPOO.exercicio7.services
 
+import ensaio2ListaDeExerciciosPOO.exercicio7.entities.DadosEntregaDTO
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Endereco
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Entregador
 import ensaio2ListaDeExerciciosPOO.exercicio7.entities.Pedido
@@ -53,18 +54,25 @@ class EntregaService {
 
   String listarDadosDasEntregas(List<Entregador> entregadores, Pedido pedido, Endereco enderecoEntrega,
                                 Restaurante restaurante) {
-    List<String> dadosDasEntregas = []
+
+    List<DadosEntregaDTO> dadosDasEntregas = []
 
     entregadores.each {entregador ->
       List<Endereco> enderecos = [entregador.getPosicaoAtual(), restaurante.getEndereco(), enderecoEntrega]
       double tempoEntrega = this.calcularTempoEntregaEmHoras(enderecos, entregador)
       BigDecimal valorEntrega = this.calcularValorEntrega(pedido, enderecos, entregador)
 
-      dadosDasEntregas.add("Entregador: ${entregador.nome}, Tempo: ${tempoEntrega.round(3)}, Preco: R" + '$ ' +
-              "${valorEntrega.round(2)}\n")
+      dadosDasEntregas.add(new DadosEntregaDTO(entregador.nome, tempoEntrega, valorEntrega))
     }
 
-    return dadosDasEntregas
+    dadosDasEntregas.sort((DadosEntregaDTO d1, DadosEntregaDTO d2) -> d1.tempoEntrega.compareTo(d2.tempoEntrega))
+
+    String lista = ""
+    dadosDasEntregas.each {dadosDaEntrega ->
+      lista += dadosDaEntrega.toString()
+    }
+
+    return lista
   }
 
 }
