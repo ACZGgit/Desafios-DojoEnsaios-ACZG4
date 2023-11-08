@@ -81,16 +81,30 @@ class JogadorDeFotebol {
     }
 
     Integer getIdade() {
-        List<String> datanascimento = this.dataNascimento.split("-")
+        List<String> dataNascimento = this.dataNascimento.split("-")
 
-        LocalDate dataNascimentoConvertida = LocalDate.of(datanascimento[0] as Integer, datanascimento[1] as Integer, datanascimento[2] as Integer)
+        LocalDate dataNascimentoConvertida = LocalDate.of(dataNascimento[0] as Integer, dataNascimento[1] as Integer,
+                dataNascimento[2] as Integer)
         LocalDate dataAtual = LocalDate.now()
 
         return dataAtual.getYear() - dataNascimentoConvertida.getYear()
-
     }
 
     Integer getTempoParaAposentar() {
+        Integer tempoParaAposentar = 0
+        switch (this.posicao) {
+            case Posicao.DEFESA:
+                tempoParaAposentar = 40
+                break
+            case Posicao.MEIO_CAMPO:
+                tempoParaAposentar = 38
+                break
+            case Posicao.ATACANTE:
+                tempoParaAposentar = 35
+                break
+        }
 
+        return tempoParaAposentar - this.getIdade()
     }
+
 }
