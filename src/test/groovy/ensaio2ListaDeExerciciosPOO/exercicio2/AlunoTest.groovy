@@ -1,4 +1,4 @@
-package ensaio2ListaDeExerciciosPOO.exercicio2.exercicio1
+package ensaio2ListaDeExerciciosPOO.exercicio2
 
 import ensaio2ListaDeExerciciosPOO.exercicio1.JogadorDeFotebol
 import ensaio2ListaDeExerciciosPOO.exercicio1.Posicao
@@ -31,7 +31,35 @@ class AlunoTest extends GroovyTestCase {
         //given
         Double expect = 6.6
         //when
-        Double actual = aluno.mediaTotal()
+        Double actual = aluno.mediaTotal().trunc(1)
+
+        //then
+        assertEquals(expect, actual)
+    }
+
+    @Test
+    void calculaNotaFaltanteParaAprovacaoTest() {
+
+        //given
+        Double notaMinima = 7.0
+        Double expect = 0.3
+
+        //when
+        Double actual = aluno.calculoNotaFaltanteParaAprovacao(notaMinima).trunc(1)
+
+        //then
+        assertEquals(expect, actual)
+    }
+
+    @Test
+    void calculaNotaFaltanteParaAprovacao2Test() {
+
+        //given
+        Double notaMinima = 6.0
+        Double expect = 0
+
+        //when
+        Double actual = aluno.calculoNotaFaltanteParaAprovacao(notaMinima).trunc(1)
 
         //then
         assertEquals(expect, actual)

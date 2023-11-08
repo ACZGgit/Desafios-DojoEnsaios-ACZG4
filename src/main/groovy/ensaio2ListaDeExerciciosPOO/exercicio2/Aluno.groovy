@@ -40,10 +40,20 @@ class Aluno {
     }
 
     Double mediaTotal(){
-        Double mediaProva = ((aluno.getProva1() * 2.5) + (aluno.getProva2() * 2.5)) / 5
-        Double mediaTrabalho = (aluno.getTrabalho() * 2) / 2
-        Double media = (mediaProva + mediaTrabalho)/2
 
-        return media;
+        Double media = ((this.prova1 * 2.5) + (this.prova2 * 2.5) + (this.trabalho * 2)) / 7
+        return media
+
+    }
+
+    double calculoNotaFaltanteParaAprovacao(Double notaMinima){
+
+        double nota = notaMinima - this.mediaTotal()
+
+        if(nota>0) {
+            return nota
+        }
+        return 0
+
     }
 }
