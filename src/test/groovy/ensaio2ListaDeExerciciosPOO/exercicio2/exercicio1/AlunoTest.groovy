@@ -2,17 +2,18 @@ package ensaio2ListaDeExerciciosPOO.exercicio2.exercicio1
 
 import ensaio2ListaDeExerciciosPOO.exercicio1.JogadorDeFotebol
 import ensaio2ListaDeExerciciosPOO.exercicio1.Posicao
+import ensaio2ListaDeExerciciosPOO.exercicio2.Aluno
 import groovy.test.GroovyTestCase
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
 
-class AlunoTest extends GroovyTestCase{
+class AlunoTest extends GroovyTestCase {
 
     static Aluno aluno
 
     @BeforeAll
-    static void instanciaIdentificadorDePalavrasService() {
+    static void instanciarAluno() {
 
         aluno = new Aluno(
                 "231123654123",
@@ -26,15 +27,14 @@ class AlunoTest extends GroovyTestCase{
 
 
     @Test
-    void calculaIdadeDoJogadorTest() {
-        //given:
-        int idadeEsperadaEmAnos = 523
+    void calculaMediaFinalAluno() {
+        //given
+        Double expect = 6.6
+        //when
+        Double actual = aluno.mediaTotal()
 
-        //when:
-        int idadeObtida = jogadorDeFotebol.getIdade()
-
-        //then:
-        assertEquals(idadeEsperadaEmAnos, idadeObtida);
+        //then
+        assertEquals(expect, actual)
     }
 
 }
