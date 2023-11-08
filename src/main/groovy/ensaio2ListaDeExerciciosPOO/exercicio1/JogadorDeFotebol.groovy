@@ -86,10 +86,11 @@ class JogadorDeFotebol {
         LocalDate dataNascimentoConvertida = LocalDate.of(datanascimento[0] as Integer, datanascimento[1] as Integer, datanascimento[2] as Integer)
         LocalDate dataAtual = LocalDate.now()
 
-        int mes = dataNascimentoConvertida.getMonth()
-        int ano = dataNascimentoConvertida.getYear()
+        return dataAtual.getYear() - dataNascimentoConvertida.getYear()
 
+    }
 
-        return dataAtual.getYear() - ano
+    Integer getTempoParaAposentar() {
+
     }
 }
