@@ -94,9 +94,9 @@ class EntregaServiceTest extends GroovyTestCase {
         BigDecimal valorEsperado = 883.53
 
         //when:
-        List<Endereco> enderecos = [ posicaoEntregador3, enderecoRestaurante, enderecoEntrega]
+        List<Endereco> enderecos = [ posicaoEntregador, enderecoRestaurante, enderecoEntrega]
         BigDecimal valorCalculado = entregaService
-          .calcularValorEntrega(pedido, enderecos, entregador3).round(2)
+          .calcularValorEntrega(pedido, enderecos, entregador).round(2)
 
         //then:
         assertEquals(valorEsperado, valorCalculado)
